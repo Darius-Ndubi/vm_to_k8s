@@ -1,0 +1,20 @@
+# Logs
+logs/
+**.log
+zzz
+vagfile1
+
+# Virtual environment
+venv/
+
+# Cache files
+__pycache__
+.vscode/
+__init__.pyc
+
+# local files
+nginx/
+
+# vagrant files
+.vagrant/
+k8s.txt
