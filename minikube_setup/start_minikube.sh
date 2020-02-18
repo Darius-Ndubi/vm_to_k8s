@@ -26,4 +26,5 @@ main() {
     set_up_minikube
 }
 
+#@--- Run main function ---@#
 main

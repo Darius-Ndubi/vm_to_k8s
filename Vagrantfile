@@ -41,6 +41,7 @@ Vagrant.configure("2") do |config|
         sudo cp /home/vagrant/hello_world/index.html /usr/share/nginx/html/index.html
         sudo cp /home/vagrant/hello_world/index.html /var/www/html/index.html
         service nginx start
+        sudo updatedb
       SHELL
     end
 
@@ -59,7 +60,9 @@ Vagrant.configure("2") do |config|
         # Install required packages
         sudo apt-get update
         sudo apt-get install -y apt-transport-https ca-certificates curl nginx software-properties-common
+        sudo add-apt-repository ppa:deadsnakes/ppa
         sudo apt-get update
+        sudo apt install -y python3.7 python3-pip
         # Setup system Locales
 
         export LC_ALL="en_US.UTF-8"
@@ -76,7 +79,7 @@ Vagrant.configure("2") do |config|
       # minikube.vm.box_version = "1.16.3"
       minikube.vm.box = "ubuntu/xenial64"
 
-      minikube.vm.network "forwarded_port", guest: 8080, host: 8084
+      minikube.vm.network "forwarded_port", guest: 80, host: 8084
       # Private IP to access deployed apps on the host machine
       minikube.vm.network "private_network", ip: "192.168.33.12"
       # sync the folder that contains deploy files and start script

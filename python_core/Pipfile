@@ -1,0 +1,19 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+flake8 = "*"
+
+[packages]
+paramiko = "*"
+scp = "*"
+flake8 = "*"
+loguru = "*"
+flask = "*"
+flask-restplus = "*"
+gunicorn = "*"
+
+[requires]
+python_version = "3.7"
